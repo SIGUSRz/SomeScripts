@@ -51,3 +51,27 @@ autocmd FileType python nnoremap <buffer> <C-/> I#<esc>
 "Vundle Set up
 "#####################################
 set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+"Plugin List
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+"File System Management using Nerd Tree
+Plugin 'scrooloose/nerdTree'
+"Auto Completion for Python
+Plugin 'davidhalter/jedi-vim'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin on    " required
+
+"#####################################
+"Plugin Customization
+"#####################################
+"Set NerdTree directory arrow symbol
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"

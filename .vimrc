@@ -60,8 +60,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "File System Management using Nerd Tree
 Plugin 'scrooloose/nerdTree'
-"Auto Completion for Python
-Plugin 'davidhalter/jedi-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin on    " required

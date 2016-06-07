@@ -1,3 +1,6 @@
+"#####################################
+"Setup options
+"#####################################
 "Turn on code syntax hightlighting
 syntax on
 "Unicode encoding
@@ -10,20 +13,40 @@ set tabstop=4
 set number
 "Ignore case when searching
 set ignorecase
-"Turn off smart indent
-set nosmartindent
+"Turn on smart indent
+set smartindent
 "Turn on autoindent
 set autoindent
-"Expand tab into spaces
-set expandtab
+"Fix backspace deletion
+set backspace=indent,eol,start
 "Show a line under cursor current line
 set cursorline
 "Show matching brackets
 set showmatch
+"Turn off auto commenting insertion
+set formatoptions-=cro
+
+"#####################################
+"Key Mapping
+"#####################################
+"Set switching window shortcuts
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
+"#####################################
+"File Type Settings
+"#####################################
 "Use :R to run python script
-autocmd FileType python command R :w !python
+autocmd FileType python command! R :w !python 
+"Set Comment Types
+autocmd FileType python nnoremap <buffer> <C-/> I#<esc>
+
 "#####################################
 "Vundle Set up
+"#####################################
 set nocompatible              " be iMproved, required
 filetype off                  " required
 " set the runtime path to include Vundle and initialize
@@ -42,8 +65,10 @@ Plugin 'davidhalter/jedi-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin on    " required
-"#####################################
 
+"#####################################
+"Plugin Customization
+"#####################################
 "Set NerdTree directory arrow symbol
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
